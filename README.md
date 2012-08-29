@@ -1,3 +1,5 @@
 Run it in dev mode:
 
-```bundle exec shotgun config.ru```
+```
+bundle exec shotgun config.ru
+```
