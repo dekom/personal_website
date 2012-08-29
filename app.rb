@@ -3,6 +3,11 @@ require "bundler/setup"
 require "sinatra/base"
 require "zurb-foundation"
 
+require "sinatra/content_for2"
+require "sass/plugin/rack"
+require "haml"
+require "redcarpet"
+
 class App < Sinatra::Base
   configure :production, :development do
     enable :logging
@@ -21,8 +26,30 @@ class App < Sinatra::Base
     set :scss, Compass.sass_engine_options
   end
 
+  configure do
+    helpers Sinatra::ContentFor2
+  end
+
+  
+  configure do
+    Tilt.register Tilt::RedcarpetTemplate::Redcarpet2, 'markdown', 'mkd', 'md'
+    set :haml, format: :html5
+    set :markdown, no_intra_emphasis: true, strikethrough: true, views: 'markdowns'
+  end
+
   get "/" do
-    erb :index
+    haml :index
+  end
+
+  get "/favicon.ico" do
+  end
+
+  get "/docs/:name" do
+    haml params[:name].to_sym
+  end
+
+  get "/:name" do
+    haml params[:name].to_sym
   end
 
   get "/stylesheets/*.css" do |path|
@@ -30,4 +57,3 @@ class App < Sinatra::Base
     scss :"scss/#{path}"
   end
 end
-

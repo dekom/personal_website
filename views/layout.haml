@@ -1,0 +1,29 @@
+%html{lang: 'en'}
+  %head
+    %title=yield_content :title
+    %meta{charset: 'utf-8'}
+
+    -# Stylesheets
+    %link{rel: "stylesheet", href: "/stylesheets/app.css"}
+    =yield_content :css
+
+    -# JavaScripts
+    %script{type: "text/javascript", 
+            src: "http://code.jquery.com/jquery-latest.js"}
+
+  %body
+    %header{class: 'row'}
+      %section{class: 'twelve columns'}
+        =yield_content :header
+
+    %section{class: 'row'}
+      %article{class: 'side_body four columns'}
+        =yield_content :side_body
+      %article{class: 'main_body eight columns'}
+        =yield_content :main_body
+
+    %footer{class: 'row'}
+      %section{class: 'twelve columns'}
+        =yield_content :footer
+
+    =yield_content :js
