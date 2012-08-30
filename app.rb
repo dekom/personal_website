@@ -6,7 +6,7 @@ require "zurb-foundation"
 require "sinatra/content_for2"
 require "sass/plugin/rack"
 require "haml"
-require "redcarpet"
+require "redcloth"
 
 class App < Sinatra::Base
   configure :production, :development do
@@ -34,7 +34,7 @@ class App < Sinatra::Base
   configure do
     Tilt.register Tilt::RedcarpetTemplate::Redcarpet2, 'markdown', 'mkd', 'md'
     set :haml, format: :html5
-    set :markdown, no_intra_emphasis: true, strikethrough: true, views: 'markdowns'
+    set :textile, views: 'docs', layout_engine: :haml
   end
 
   get "/" do
@@ -45,7 +45,9 @@ class App < Sinatra::Base
   end
 
   get "/docs/:name" do
-    haml params[:name].to_sym
+    if File.exists?("docs/#{params[:name]}.textile")
+      haml params[:name].to_sym
+    end
   end
 
   get "/:name" do

@@ -24,18 +24,20 @@ Fundamental Data Structures and Algorithme
 Principles of Programming (Functional Programming)
 
 # Work Experience
-* [Neighborhood Learning Alliance][NLA]
-  
-  > Non-profit organization focused on after school education programs for
-  > low-income communities.
+* Redesigned website for [Neighborhood Learning Alliance][NLA] that is
+  cost-effective and user-friendly
 
-* 
-* Redesigned the website from scratch using:
-  * [RefineryCMS][] for easy content management.
-  * [Twitter Bootstrap][]
-  * Integrated the website to use [Amazon S3][] for content hosting and used
+## Technology Used:
+  * [RefineryCMS][] for easy content management
+  * [Twitter Bootstrap][] for fast design prototype and consistent styling
+  * [Amazon S3][] for static content hosting
+  * [Heroku][] for website and database hosting
 
   [NLA]: http://www.neighborhoodlearning.org/
+  [RefineryCMS]: http://www.refinerycms.com/
+  [Twitter Bootstrap]: http://twitter.github.com/bootstrap/index.html
+  [Amazon S3]: http://aws.amazon.com/s3/
+  [Heroku]: http://www.heroku.com/
 
 # Notable School Projects
 
@@ -56,6 +58,7 @@ Principles of Programming (Functional Programming)
 
   [top-down]: http://en.wikipedia.org/wiki/Dynamic_programming
   [bottom-up]: http://en.wikipedia.org/wiki/Dynamic_programming
+
 
 * Compression
 

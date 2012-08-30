@@ -17,7 +17,7 @@
     August 2012
 
 - content_for :side_body do
-  Side Body
+  %h1 Navigation
 
 - content_for :main_body do
-  =markdown(:resume)
+  =textile(params[:name].to_sym)
