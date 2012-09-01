@@ -33,7 +33,6 @@ class App < Sinatra::Base
   
   configure :production, :development do
     set :haml, format: :html5
-    set :textile, views: 'docs', layout_engine: :haml
   end
 
   get "/" do
@@ -45,7 +44,7 @@ class App < Sinatra::Base
 
   get "/docs/:name" do
     if File.exists?("docs/#{params[:name]}.textile")
-      textile params[:name].to_sym
+      textile params[:name].to_sym, views: 'docs', layout_engine: :haml
     end
   end
 
