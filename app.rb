@@ -13,7 +13,7 @@ class App < Sinatra::Base
     enable :logging
   end
 
-  configure do
+  configure :production, :development do
     Compass.configuration do |config|
       config.project_path = File.dirname __FILE__
       config.sass_dir = File.join "views", "scss"
@@ -26,12 +26,12 @@ class App < Sinatra::Base
     set :scss, Compass.sass_engine_options
   end
 
-  configure do
+  configure :production, :development do
     helpers Sinatra::ContentFor2
   end
 
   
-  configure do
+  configure :production, :development do
     Tilt.register Tilt::RedcarpetTemplate::Redcarpet2, 'markdown', 'mkd', 'md'
     set :haml, format: :html5
     set :textile, views: 'docs', layout_engine: :haml
