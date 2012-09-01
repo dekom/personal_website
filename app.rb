@@ -36,7 +36,7 @@ class App < Sinatra::Base
   end
 
   get "/" do
-    haml :index, views: 'views', layout: :'layout'
+    haml :index
   end
 
   get "/favicon.ico" do
@@ -44,12 +44,14 @@ class App < Sinatra::Base
 
   get "/docs/:name" do
     if File.exists?("docs/#{params[:name]}.textile")
-      textile params[:name].to_sym, views: 'docs', layout_engine: :haml, layout: :'layout'
+      textile :'/docs/params[:name]', layout_engine: :haml, layout: :'/doc/layout'
+    else
+      raise error(404)
     end
   end
 
   get "/:name" do
-    haml params[:name].to_sym, views: 'views', layout: :'layout'
+    haml params[:name].to_sym
   end
 
   get "/stylesheets/*.css" do |path|
