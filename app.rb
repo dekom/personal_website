@@ -36,7 +36,7 @@ class App < Sinatra::Base
   end
 
   get "/" do
-    haml :index
+    haml :index, views: 'views'
   end
 
   get "/favicon.ico" do
@@ -49,7 +49,7 @@ class App < Sinatra::Base
   end
 
   get "/:name" do
-    haml params[:name].to_sym
+    haml params[:name].to_sym, views: 'views'
   end
 
   get "/stylesheets/*.css" do |path|
