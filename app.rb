@@ -36,7 +36,7 @@ class App < Sinatra::Base
   end
 
   get "/" do
-    haml :index, views: 'views', layout: 'layout'
+    haml :index, views: 'views', layout: :'layout'
   end
 
   get "/favicon.ico" do
