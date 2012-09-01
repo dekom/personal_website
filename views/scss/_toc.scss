@@ -1,0 +1,10 @@
+$toc_active_color: $mainColor;
+$toc_inactive_color: $secondaryColor;
+
+.toc {
+  ul { list-style-type: none; }
+}
+
+.toc-active {
+  background: {color: $toc_active_color; }
+}

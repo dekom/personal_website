@@ -1,0 +1,21 @@
+<article class="eight columns" id="main_body">
+
+h2. August 27, 2012 - September 2, 2012
+
+# Do not play or watch video games
+# Create personal website (in progress)
+# Attend coursera courses 
+# Read "Github Flow":http://scottchacon.com/2011/08/31/github-flow.html
+# Watch "Learning to Love JavaScript":http://www.youtube.com/watch?v=seX7jYI96GE&list=PL8DC05E70357019CC&feature=mh_lolz
+
+</article>
+
+<article class="four columns" id="side_body">
+
+h2. Completed
+
+# -Read YongTing's Senior Thesis-
+# -Read tabs that's been saved up-
+# -Watch ["Douglas Crockford on JS":http://www.youtube.com/watch?v=v2ifWcnQs6M]-
+
+</article>

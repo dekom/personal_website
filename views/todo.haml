@@ -1,0 +1,23 @@
+-# Javascripts
+- content_for :js do
+  %script{type: "text/javascript",
+          src: "/javascripts/resume.js"}
+
+-# Stylesheets
+- content_for :css do
+  %link{rel: "stylesheet", 
+        href: "/stylesheets/resume.css"}
+
+- content_for :title do
+  To Do List| Xing Zhou
+
+- content_for :footer do
+  %p<
+    Updated:
+    August 2012
+
+- content_for :side_body do
+  %h1 Navigation
+
+- content_for :main_body do
+  =textile(params[:name].to_sym)

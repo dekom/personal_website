@@ -1,0 +1,20 @@
+<article class="eight columns" id="main_body">
+
+h2. Tasks To Do
+
+# Make weekly planner (1)
+# Create personal website (in progress)
+# Upload resume to personal website (in progress)
+# Learn Sinatra through creating the personal website and other small projects (in progress)
+# Learn Pyramid by looking through Pensieve source code and playing around with it
+# Attend coursera courses
+
+</article>
+
+<article class="four columns" id="side_body">
+
+h2. Completed
+
+# -Create Pensieve physic lesson to give Yush user feedback-
+
+</article>

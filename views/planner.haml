@@ -1,0 +1,8 @@
+- content_for :title do
+  Planner | Xing Zhou
+
+- content_for :side_body do
+  %h1 Navigation
+
+- content_for :main_body do
+  =textile(params[:name].to_sym)

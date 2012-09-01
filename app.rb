@@ -46,7 +46,7 @@ class App < Sinatra::Base
 
   get "/docs/:name" do
     if File.exists?("docs/#{params[:name]}.textile")
-      haml params[:name].to_sym
+      textile params[:name].to_sym
     end
   end
 
@@ -56,6 +56,6 @@ class App < Sinatra::Base
 
   get "/stylesheets/*.css" do |path|
     content_type "text/css", charset: "utf-8"
-    scss :"scss/#{path}"
+    scss "scss/#{path}".to_sym
   end
 end

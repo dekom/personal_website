@@ -5,6 +5,7 @@
 
     -# Stylesheets
     %link{rel: "stylesheet", href: "/stylesheets/app.css"}
+    %link{rel: "stylesheet", href: "/stylesheets/#{params[:name]}.css"}
     =yield_content :css
 
     -# JavaScripts
@@ -12,18 +13,37 @@
             src: "http://code.jquery.com/jquery-latest.js"}
 
   %body
-    %header{class: 'row'}
-      %section{class: 'twelve columns'}
+    %header.row
+      =haml "_nav".to_sym
+      %section.twelve.columns
+        %h1 Xing Zhou
+        %h4.subheader xingz (at) andrew (dot) cmu (dot) edu
         =yield_content :header
 
-    %section{class: 'row'}
-      %article{class: 'side_body four columns'}
+    %section.row
+      %article.toc.four.columns#side_body
         =yield_content :side_body
-      %article{class: 'main_body eight columns'}
+
+      %article.eight.columns#main_body
         =yield_content :main_body
 
-    %footer{class: 'row'}
-      %section{class: 'twelve columns'}
+    %section.row
+      %article.twelve.columns
+        =yield
+
+    %footer.row
+      %section.twelve.columns
+        %p<
+          Updated: August 2012
         =yield_content :footer
 
-    =yield_content :js
+
+      %script{type: "text/javascript",
+              src: "/javascripts/lib/foundation.min.js"}
+
+      %script{type: "text/javascript", src: "/javascripts/app.js"}
+
+      %script{type: "text/javascript",
+              src: "/javascripts/#{params[:name]}.js"}
+
+      =yield_content :js
