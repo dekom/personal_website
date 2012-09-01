@@ -44,12 +44,12 @@ class App < Sinatra::Base
 
   get "/docs/:name" do
     if File.exists?("docs/#{params[:name]}.textile")
-      textile params[:name].to_sym, views: 'docs', layout_engine: :haml, layout: 'layout'
+      textile params[:name].to_sym, views: 'docs', layout_engine: :haml, layout: :'layout'
     end
   end
 
   get "/:name" do
-    haml params[:name].to_sym, views: 'views', layout: 'layout'
+    haml params[:name].to_sym, views: 'views', layout: :'layout'
   end
 
   get "/stylesheets/*.css" do |path|
