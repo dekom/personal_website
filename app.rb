@@ -44,7 +44,7 @@ class App < Sinatra::Base
 
   get "/docs/:name" do
     if File.exists?("views/docs/#{params[:name]}.textile")
-      textile :'/docs/params[:name]', layout_engine: :haml, layout: :'/doc/layout'
+      textile :"/docs/#{params[:name]}", layout_engine: :haml, layout: :'/doc/layout'
     else
       raise error(404)
     end
