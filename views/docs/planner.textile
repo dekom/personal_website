@@ -7,6 +7,8 @@ h2. 27 August - 2 September 2012
 # Attend coursera courses 
 # Read "Github Flow":http://scottchacon.com/2011/08/31/github-flow.html
 # Watch "Learning to Love JavaScript":http://www.youtube.com/watch?v=seX7jYI96GE&list=PL8DC05E70357019CC&feature=mh_lolz
+# Watch "Douglas Crockford: Advanced JavaScript":http://www.youtube.com/watch?v=DwYPG6vreJg
+# Watch "JavaScript Programming Language":http://www.youtube.com/watch?v=cIOIyfRoGcM
 
 </article>
 

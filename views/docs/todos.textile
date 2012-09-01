@@ -8,6 +8,10 @@ h2. Tasks To Do
 # Learn Sinatra through creating the personal website and other small projects (in progress)
 # Learn Pyramid by looking through Pensieve source code and playing around with it
 # Attend coursera courses
+# Integrate "AngularJS":http://www.angularjs.org into the personal website
+# Make "quadrant-based":http://www.teal.org.uk/sv/timemgnt.htm time management 
+
+
 
 </article>
 
