@@ -32,7 +32,6 @@ class App < Sinatra::Base
 
   
   configure :production, :development do
-    Tilt.register Tilt::RedcarpetTemplate::Redcarpet2, 'markdown', 'mkd', 'md'
     set :haml, format: :html5
     set :textile, views: 'docs', layout_engine: :haml
   end
