@@ -1,3 +1,7 @@
+<section class="twelve columns">
+  <div class="alert-box alert">In Progress...</div>
+</section>
+
 <article class="twelve columns" id="main_body">
 
 h1(#objective). Objective
