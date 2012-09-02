@@ -5,7 +5,8 @@
 
     -# Stylesheets
     %link{rel: "stylesheet", href: "/stylesheets/app.css"}
-    %link{rel: "stylesheet", href: "/stylesheets/#{params[:name]}.css"}
+    - if params[:name]
+      %link{rel: "stylesheet", href: "/stylesheets/#{params[:name]}.css"}
     =yield_content :css
 
     -# JavaScripts
@@ -43,7 +44,8 @@
 
       %script{type: "text/javascript", src: "/javascripts/app.js"}
 
-      %script{type: "text/javascript",
-              src: "/javascripts/#{params[:name]}.js"}
+      - if params[:name]
+        %script{type: "text/javascript",
+                src: "/javascripts/#{params[:name]}.js"}
 
       =yield_content :js

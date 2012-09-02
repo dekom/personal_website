@@ -5,7 +5,6 @@ gem "sinatra-content-for2"
 gem "zurb-foundation"
 gem "thin"
 gem "haml"
-#gem "redcarpet"
 gem "RedCloth"
 
 group :development do

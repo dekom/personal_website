@@ -1,0 +1,40 @@
+<article class="six columns" id="main_body">
+
+h1. Tasks To Do
+
+# Make weekly planner (1)
+# Learn Sinatra through creating the personal website and other small projects (in progress)
+# Learn Pyramid by looking through Pensieve source code and playing around with it
+# Integrate ["AngularJS":http://www.angularjs.org] into the personal website
+# Make ["quadrant-based":http://www.teal.org.uk/sv/timemgnt.htm] time management 
+# Watch ["Douglas Crockford: Advanced JavaScript":http://www.youtube.com/watch?v=DwYPG6vreJg]
+# Watch ["JavaScript Programming Language":http://www.youtube.com/watch?v=cIOIyfRoGcM]
+
+</article>
+
+<article class="six columns" id="side_body">
+
+h1. Weekly Planner
+
+# Do not play or watch video games
+# Create personal website (in progress)
+# Upload resume to personal website (in progress)
+# Attend coursera courses 
+
+</article>
+
+***
+
+<article class="twelve columns">
+
+h1. Completed
+
+# -Create Pensieve physic lesson to give Yush user feedback-
+# -Go through ["AngularJS tutorial":http://http://docs.angularjs.org/tutorial]-
+# -Read YongTing's Senior Thesis-
+# -Read tabs that's been saved up-
+# -Watch ["Douglas Crockford on JS":http://www.youtube.com/watch?v=v2ifWcnQs6M]-
+# -Read ["Github Flow":http://scottchacon.com/2011/08/31/github-flow.html]-
+# -Watch ["Learning to Love JavaScript":http://www.youtube.com/watch?v=seX7jYI96GE&list=PL8DC05E70357019CC&feature=mh_lolz]-
+
+</article>
