@@ -13,10 +13,9 @@
     %script{type: "text/javascript", 
             src: "/javascripts/lib/jquery.js"}
 
-
   %body
     %header.row
-      =haml "_nav".to_sym
+      =haml :"_nav"
       %section.twelve.columns
         %h1 
           =params[:name].capitalize

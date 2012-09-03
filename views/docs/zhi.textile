@@ -1,0 +1,58 @@
+<article class="twelve columns">
+
+h1. 智(Zhi)<small> Personal Vocabulary Builder </small>
+
+Follow the creation process here!
+
+<ul class="accordion">
+<li class="active">
+<div class="title">
+h5. User Stories <small> Hypothetical stories of interaction </small>
+</div>
+
+<div class="content">
+p. Jenny's Story:
+
+bq.. Jenny is reading an article on a the website.  As she's reading, she finds a word that she does not recognize or cannot recall the specific meaning of.
+
+Wanting to not misinterpret the article, she double clicks on the word. The word subsequently gets highlighted and a box shows up which gives the most common definition for the highlighted word, the word pronounciation, and the word's part of speech. 
+
+Knowing that the word will be useful, she decides to save the word along with the definition to her vocabulary list. 
+
+She continues to read the article, repeating this sequence of actions as she meets words that she does not know.
+
+p. John's Story:
+
+bq.. John is reading an article on a website. He finds a particularly interesting and difficult word.  He double clicks on the word and the box shows up present the basic information of the word.  However, intrigued by the word's definition, he clicks on the "more" button, which shows he other media associated with the highlighted words, such as pictures, videos, and additional uses from other contexts.  He clicks on the save button to save the word and all the additional information.
+
+p. Jack's Story:
+
+bq.. Jack has a list of vocabulary words already saved up, and he wants to review them through to enforce his memorization of the words.
+He visits his profile page on Zhi's website and chooses one of the choices for learning the words he selected individually or from a specific list or from a randomly chosen list.
+</div>
+</li>
+
+<li>
+
+<div class="title">
+h5. Database Layout <small> Keywords and Relationships </small>
+</div>
+
+<div class="content">
+Keywords:
+
+* word
+* user
+* definition
+* source
+* parts of speech
+* pronounciation
+* context
+* list
+* additional information
+</div>
+
+</li>
+
+</ul>
+</article>

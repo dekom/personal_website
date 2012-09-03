@@ -1,3 +1,5 @@
+# encoding: utf-8
+#
 require "rubygems"
 require "bundler/setup"
 require "sinatra/base"
@@ -7,6 +9,16 @@ require "sinatra/content_for2"
 require "sass/plugin/rack"
 require "haml"
 require "redcloth"
+
+module Tilt
+  class RedClothTemplate < Template
+    def prepare
+      @data.force_encoding Encoding.default_external
+      @engine = RedCloth.new(data)
+      @output = nil
+    end
+  end
+end
 
 class App < Sinatra::Base
   configure :production, :development do
@@ -30,12 +42,12 @@ class App < Sinatra::Base
     helpers Sinatra::ContentFor2
   end
 
-  
   configure :production, :development do
     set :haml, format: :html5
   end
 
   get "/" do
+    content_type "text/html", charset: "utf-8"
     haml :index
   end
 
@@ -44,6 +56,8 @@ class App < Sinatra::Base
 
   get "/docs/:name" do
     if File.exists?("views/docs/#{params[:name]}.textile")
+      content_type "text/html", charset: "utf-8"
+      @text = textile :"/docs/#{params[:name]}"
       textile :"/docs/#{params[:name]}", layout_engine: :haml, layout: :'/docs/layout'
     else
       raise error(404)
@@ -51,11 +65,16 @@ class App < Sinatra::Base
   end
 
   get "/:name" do
+    content_type "text/html", charset: "utf-8"
     haml params[:name].to_sym
   end
 
   get "/stylesheets/*.css" do |path|
-    content_type "text/css", charset: "utf-8"
-    scss "scss/#{path}".to_sym
+    if File.exists?("views/scss/#{path}.scss")
+      content_type "text/css", charset: "utf-8"
+      scss "scss/#{path}".to_sym
+    else
+      raise error(404)
+    end
   end
 end
