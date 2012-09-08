@@ -39,7 +39,8 @@ h5. Database Layout <small> Keywords and Relationships </small>
 </div>
 
 <div class="content">
-Keywords:
+
+h6. Keywords
 
 * word
 * user
@@ -50,6 +51,31 @@ Keywords:
 * context
 * list
 * additional information
+
+h6. Previous Database Layout: No reliance on external API
+
+* A _word_ has many definitions
+* A _word_ has one pronounciation
+* A _word_ has one parts of speech
+* A _word_ has one source
+* A _word_ has one context
+* A _word_ has many related words
+* An _user_ has many words
+* An _user_ has many list
+* A list has many words
+
+h6. Rely On External API?
+
+Conceivably, the project should use an external API such as this one: ["Wordnik API":http://developer.wordnik.com/docs].  This would simplify the database tremendously with a more consistent and up-to-date word associations.
+
+*Zhi* instead will speficially focus on linking up to Wordnik API to display word definition and other information, and it will store user word lists and allow users to a way to study the stored words.
+
+h6. New Database Layout: Reliance on External API
+
+* An _user_ has many word lists.
+* A _word list_ has many words and belongs to an user.
+* A _word_ has a list of sources.
+* A _word_ has a set of extraneous information.
 </div>
 
 </li>
