@@ -2,7 +2,7 @@
 
 h1. Tasks To Do
 
-# Make weekly planner (1)
+# Make weekly planner (2)
 # Learn Sinatra through creating the personal website and other small projects (in progress)
 # Learn Pyramid by looking through Pensieve source code and playing around with it
 # Integrate ["AngularJS":http://www.angularjs.org] into the personal website
@@ -20,6 +20,8 @@ h1. Weekly Planner
 # Create personal website (in progress)
 # Upload resume to personal website (in progress)
 # Attend coursera courses 
+# Build on Zhi
+# Register this Heroku app to my own domain
 
 </article>
 
