@@ -4,8 +4,8 @@ gem "sinatra"
 gem "sinatra-content-for2"
 gem "zurb-foundation"
 gem "thin"
-gem "haml"
 gem "RedCloth"
+gem "redcarpet"
 
 group :development do
   gem "shotgun"

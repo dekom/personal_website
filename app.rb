@@ -1,5 +1,5 @@
 # encoding: utf-8
-#
+
 require "rubygems"
 require "bundler/setup"
 require "sinatra/base"
@@ -7,9 +7,10 @@ require "zurb-foundation"
 
 require "sinatra/content_for2"
 require "sass/plugin/rack"
-require "haml"
 require "redcloth"
+require "redcarpet"
 
+# Hack around Tilt's inability to enforce encoding propertly
 module Tilt
   class RedClothTemplate < Template
     def prepare
@@ -23,9 +24,11 @@ end
 class App < Sinatra::Base
   configure :production, :development do
     enable :logging
+    helpers Sinatra::ContentFor2
   end
 
   configure :production, :development do
+    # Configure Compass
     Compass.configuration do |config|
       config.project_path = File.dirname __FILE__
       config.sass_dir = File.join "views", "scss"
@@ -38,27 +41,19 @@ class App < Sinatra::Base
     set :scss, Compass.sass_engine_options
   end
 
-  configure :production, :development do
-    helpers Sinatra::ContentFor2
-  end
-
-  configure :production, :development do
-    set :haml, format: :html5
-  end
-
   get "/" do
     content_type "text/html", charset: "utf-8"
-    haml :index
+    erb :index
   end
 
   get "/favicon.ico" do
   end
 
   get "/docs/:name" do
-    if File.exists?("views/docs/#{params[:name]}.textile")
+    # Routing for single page documents written in textile
+    if File.exists?("views/docs/#{params[:name]}.markdown")
       content_type "text/html", charset: "utf-8"
-      @text = textile :"/docs/#{params[:name]}"
-      textile :"/docs/#{params[:name]}", layout_engine: :haml, layout: :'/docs/layout'
+      markdown :"/docs/#{params[:name]}", layout_engine: :erb, layout: :'/docs/layout'
     else
       raise error(404)
     end
@@ -66,7 +61,7 @@ class App < Sinatra::Base
 
   get "/:name" do
     content_type "text/html", charset: "utf-8"
-    haml params[:name].to_sym
+    erb params[:name].to_sym
   end
 
   get "/stylesheets/*.css" do |path|
