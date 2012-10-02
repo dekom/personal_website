@@ -3,23 +3,12 @@
 require "rubygems"
 require "bundler/setup"
 require "sinatra/base"
-require "zurb-foundation"
+require "compass"
+require "compass-normalize"
 
 require "sinatra/content_for2"
 require "sass/plugin/rack"
-require "redcloth"
 require "redcarpet"
-
-# Hack around Tilt's inability to enforce encoding propertly
-module Tilt
-  class RedClothTemplate < Template
-    def prepare
-      @data.force_encoding Encoding.default_external
-      @engine = RedCloth.new(data)
-      @output = nil
-    end
-  end
-end
 
 class App < Sinatra::Base
   configure :production, :development do
@@ -64,10 +53,10 @@ class App < Sinatra::Base
     erb params[:name].to_sym
   end
 
-  get "/stylesheets/*.css" do |path|
-    if File.exists?("views/scss/#{path}.scss")
+  get "/stylesheets/:name.css" do
+    if File.exists?("views/scss/#{params[:name]}.scss")
       content_type "text/css", charset: "utf-8"
-      scss "scss/#{path}".to_sym
+      scss "scss/#{params[:name]}".to_sym
     else
       raise error(404)
     end

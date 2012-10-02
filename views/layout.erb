@@ -1,51 +1,37 @@
-%html{lang: 'en'}
-  %head
-    %title=yield_content :title
-    %meta{charset: 'utf-8'}
+<html lang='en'>
+  <head>
+    <title><%= yield_content :title %></title>
+    <meta charset='utf-8' />
+    
+    <%# Stylesheets %>
+    <link rel='stylesheet' href='/stylesheets/app.css' type="text/css"/>
+    <%= yield_content :css %>
 
-    -# Stylesheets
-    %link{rel: "stylesheet", href: "/stylesheets/app.css"}
-    - if params[:name]
-      %link{rel: "stylesheet", href: "/stylesheets/#{params[:name]}.css"}
-    =yield_content :css
+    <%# Per-file Stylesheets, if available %>
+    <% if params[:name] %>
+      <link rel="stylesheet" href="/stylesheets/<%= params[:name] %>.css" type="text/css" />
+    <% end %>
 
-    -# JavaScripts
-    %script{type: "text/javascript", 
-            src: "http://code.jquery.com/jquery-latest.js"}
+    <%# External JavaScripts %>
+    <script src="http://code.jquery.com/jquery-latest.js" type="text/javascript" charset="utf-8"></script>
+    <script src="http://modernizr.com/downloads/modernizr.js" type="text/javascript" charset="utf-8"></script>
+  </head>
 
-  %body
-    %header.row
-      =haml "_nav".to_sym
-      %section.twelve.columns
-        %h1 Xing Zhou
-        %h4.subheader xingz (at) andrew (dot) cmu (dot) edu
-        =yield_content :header
+  <body>
+    <header>
+      <%= yield_content :header %>
+    </header>
+    <section>
+      <%= yield %>
+    </section>
+    <footer>
+      <%= yield_content :footer %>
+    </footer>
 
-    %section.row
-      %article.toc.four.columns#side_body
-        =yield_content :side_body
-
-      %article.eight.columns#main_body
-        =yield_content :main_body
-
-    %section.row
-      %article.twelve.columns
-        =yield
-
-    %footer.row
-      %section.twelve.columns
-        %p<
-          Updated: September 2012
-        =yield_content :footer
-
-
-      %script{type: "text/javascript",
-              src: "/javascripts/lib/foundation.min.js"}
-
-      %script{type: "text/javascript", src: "/javascripts/app.js"}
-
-      - if params[:name]
-        %script{type: "text/javascript",
-                src: "/javascripts/#{params[:name]}.js"}
-
-      =yield_content :js
+    <%# Local Domain JavaScripts %>
+    <script src="/javascripts/app.js" type="text/javascript" charset="utf-8"></script>
+    <% if params[:name] %>
+      <script src="/javascripts/<%=params[:name] %>.js" type="text/javascript" charset="utf-8"></script>
+    <% end %>
+    <%= yield_content :js %>
+  </body>

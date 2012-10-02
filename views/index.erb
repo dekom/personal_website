@@ -1,11 +1,11 @@
-- content_for :title do
+<% content_for :title do %>
   Xing Zhou's Website
+<% end %>
 
--content_for :footer do
-  %p<
-    Server time:
-    =Time.now.strftime(' %Y %B %e %H:%M:%S')
+<% content_for :footer do %>
+  <p>Server time: <%= Time.now.strftime('%Y %B %e %H:%M:%S') %></p>
+<% end %>
 
-%h1 Welcome!
-%p My name is Xing Zhou (dekom), and I find introductions to be terribly boring.This is my playground.  
-%p Running on Sinatra!
+<h1>Welcome!</h1>
+<p>My name is Xing Zhou (dekom), and I find introductions to be terribly boring.</p>
+<p>Running on Sinatra!</p>

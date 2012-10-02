@@ -2,10 +2,9 @@ source :rubygems
 
 gem "sinatra"
 gem "sinatra-content-for2"
-gem "zurb-foundation"
 gem "thin"
-gem "RedCloth"
 gem "redcarpet"
+gem "compass-normalize"
 
 group :development do
   gem "shotgun"
