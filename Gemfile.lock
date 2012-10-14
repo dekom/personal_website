@@ -8,8 +8,8 @@ GEM
       chunky_png (~> 1.2)
       fssm (>= 0.2.7)
       sass (~> 3.1)
-    compass-normalize (1.3)
-      compass (>= 0.11.5)
+    compass_twitter_bootstrap (2.0.3)
+      compass
     daemons (1.1.9)
     eventmachine (0.12.10)
     excon (0.16.2)
@@ -62,7 +62,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  compass-normalize
+  compass_twitter_bootstrap
   heroku
   pry
   pry-doc

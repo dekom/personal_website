@@ -1,3 +1,4 @@
+<!DOCTYPE HTML>
 <html lang='en'>
   <head>
     <title><%= yield_content :title %></title>
@@ -18,14 +19,40 @@
   </head>
 
   <body>
-    <header>
+    <section class="navbar navbar-inverse">
+      <div class="navbar-inner">
+        <a class="brand" href="#">Xing Zhou</a>
+        <ul class="nav nav-tabs">
+          <li class="active"><a href="/">Home</a></li>
+          <li><a href="/projects">Projects</a></li>
+          <li><a href="/docs">Blogs</a></li>
+        </ul>
+      </div>
+    </section>
+    <header class="container-fluid">
       <%= yield_content :header %>
+      <h1>Xing Zhou <small>xingz@andrew.cmu.edu</h1>
     </header>
-    <section>
+
+    <section class="container-fluid"> 
       <%= yield %>
     </section>
-    <footer>
+
+    <footer class="container-fluid">
       <%= yield_content :footer %>
+      <audio id="chillstep" src="http://chillstep.info:1984/listen.ogg" type="audio/ogg" controls loop preload='metadata'>
+      </audio>
+
+      <%# Technical References %>
+      <section id="tech_ref">
+        <p id="main_software">Built on 
+          <span><a href="http://www.sinatrarb.com/">Sinatra</a></span>
+          <span><a href="http://compass-style.org/">Compass</a></span>
+          <span><a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a></span>
+          <span><a href="https://github.com/vmg/redcarpet">Redcarpet</a></span>
+        </p>
+        <p id="main_hosting">Hosted on <a href="http://www.heroku.com/">Heroku</a></p>
+      </section>
     </footer>
 
     <%# Local Domain JavaScripts %>

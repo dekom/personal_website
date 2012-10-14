@@ -4,7 +4,7 @@ require "rubygems"
 require "bundler/setup"
 require "sinatra/base"
 require "compass"
-require "compass-normalize"
+require "compass_twitter_bootstrap"
 
 require "sinatra/content_for2"
 require "sass/plugin/rack"
